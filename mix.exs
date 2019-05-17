@@ -4,7 +4,7 @@ defmodule DivoKafka.MixProject do
   def project do
     [
       app: :divo_kafka,
-      version: "0.1.1",
+      version: "0.1.2",
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
@@ -45,7 +45,7 @@ defmodule DivoKafka.MixProject do
   defp docs do
     [
       main: "readme",
-      source_url: "https://www.github.com/smartcitiesdata/divo_kafka",
+      source_url: "https://github.com/smartcitiesdata/divo_kafka",
       extras: [
         "README.md"
       ]
