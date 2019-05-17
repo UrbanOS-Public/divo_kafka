@@ -8,9 +8,10 @@ defmodule DivoKafka.MixProject do
       elixir: "~> 1.8",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
+      docs: docs(),
       package: package(),
       description: description(),
-      source_url: "https://github.com/SmartColumbusOS/divo-kafka"
+      source_url: "https://github.com/smartcitiesdata/divo_kafka"
     ]
   end
 
@@ -35,9 +36,19 @@ defmodule DivoKafka.MixProject do
 
   defp package do
     [
-      organization: "smartcolumbus_os",
+      maintainers: ["smartcitiesdata"],
       licenses: ["Apache 2.0"],
-      links: %{"GitHub" => "https://github.com/SmartColumbusOS/divo-kafka"}
+      links: %{"GitHub" => "https://github.com/smartcitiesdata/divo_kafka"}
+    ]
+  end
+
+  defp docs do
+    [
+      main: "readme",
+      source_url: "https://www.github.com/smartcitiesdata/divo_kafka",
+      extras: [
+        "README.md"
+      ]
     ]
   end
 end
