@@ -15,8 +15,8 @@ The package can be installed by adding `divo_kafka` to your list of dependencies
 ```elixir
 def deps do
   [
-    {:divo, "~> 1.1", organization: "smartcolumbus_os"},
-    {:divo_kafka, "~> 0.1.0", organization: "smartcolumbus_os"}
+    {:divo, "~> 1.1"},
+    {:divo_kafka, "~> 0.1.1", organization: "smartcolumbus_os"}
   ]
 end
 ```
