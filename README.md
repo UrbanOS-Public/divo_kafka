@@ -19,7 +19,7 @@ The package can be installed by adding `divo` and `divo_kafka` to your list of d
 def deps do
   [
     {:divo, "~> 1.1"},
-    {:divo_kafka, "~> 0.1.1"}
+    {:divo_kafka, "~> 0.1.2"}
   ]
 end
 ```
@@ -57,8 +57,7 @@ running in a CI system, particularly a containerized one. In such circumstances,
 recommended to use an address or name that is routable even if ExUnit will be running inside
 a container.
 
-See [Divo](https://github.com/smartcitiesdata/divo) for more instructions on using and configuring
-the Divo library.
+See [Divo GitHub](https://github.com/smartcitiesdata/divo) or [Divo Hex Documentation](https://hexdocs.pm/divo) for more instructions on using and configuring the Divo library.
 See [wurstmeister/kafka](https://github.com/wurstmeister/kafka-docker) and
 [wurstmeister/zookeeper](https://github.com/wurstmeister/zookeeper-docker) for further documentation
 on using and configuring the features of these images.
