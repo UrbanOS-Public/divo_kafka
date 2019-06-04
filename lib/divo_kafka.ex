@@ -17,6 +17,7 @@ defmodule DivoKafka do
   def gen_stack(envars) do
     topics = Keyword.get(envars, :create_topics, "clusterready:1:1")
     host = Keyword.get(envars, :outside_host, "localhost")
+    auto_create_topics = Keyword.get(envars, :auto_topic, true)
 
     check_topic =
       topics
@@ -38,6 +39,7 @@ defmodule DivoKafka do
         image: "wurstmeister/kafka:latest",
         ports: ["9092:9092"],
         environment: [
+          "KAFKA_AUTO_CREATE_TOPICS_ENABLE=#{auto_create_topics}",
           "KAFKA_ADVERTISED_LISTENERS=INSIDE://:9094,OUTSIDE://#{host}:9092",
           "KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT",
           "KAFKA_LISTENERS=INSIDE://:9094,OUTSIDE://:9092",
