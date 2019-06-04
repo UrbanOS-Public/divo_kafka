@@ -22,6 +22,7 @@ defmodule DivoKafkaTest do
             image: "wurstmeister/kafka:latest",
             ports: ["9092:9092"],
             environment: [
+              "KAFKA_AUTO_CREATE_TOPICS_ENABLE=true",
               "KAFKA_ADVERTISED_LISTENERS=INSIDE://:9094,OUTSIDE://localhost:9092",
               "KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT",
               "KAFKA_LISTENERS=INSIDE://:9094,OUTSIDE://:9092",
@@ -52,6 +53,7 @@ defmodule DivoKafkaTest do
             image: "wurstmeister/kafka:latest",
             ports: ["9092:9092"],
             environment: [
+              "KAFKA_AUTO_CREATE_TOPICS_ENABLE=true",
               "KAFKA_ADVERTISED_LISTENERS=INSIDE://:9094,OUTSIDE://ci-host:9092",
               "KAFKA_LISTENER_SECURITY_PROTOCOL_MAP=INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT",
               "KAFKA_LISTENERS=INSIDE://:9094,OUTSIDE://:9092",
@@ -70,7 +72,7 @@ defmodule DivoKafkaTest do
         }
         |> Map.merge(@zookeeper)
 
-      actual = DivoKafka.gen_stack(outside_host: "ci-host", create_topics: "streaming-data:1:1")
+      actual = DivoKafka.gen_stack(auto_topic: true, outside_host: "ci-host", create_topics: "streaming-data:1:1")
 
       assert actual == expected
     end
