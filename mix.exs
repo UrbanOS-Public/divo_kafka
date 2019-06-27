@@ -25,7 +25,8 @@ defmodule DivoKafka.MixProject do
     [
       {:credo, "~> 1.1", only: :dev, runtime: false},
       {:divo, "~> 1.1"},
-      {:ex_doc, "~> 0.19", only: :dev}
+      {:ex_doc, "~> 0.19", only: :dev},
+      {:husky, "~> 1.0", only: :dev, runtime: false}
     ]
   end
 
