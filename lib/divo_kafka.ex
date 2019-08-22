@@ -18,6 +18,7 @@ defmodule DivoKafka do
     topics = Keyword.get(envars, :create_topics, "clusterready:1:1")
     host = Keyword.get(envars, :outside_host, "localhost")
     auto_create_topics = Keyword.get(envars, :auto_topic, true)
+    kafka_image_version = Keyword.get(envars, :kafka_image_version, "latest")
 
     check_topic =
       topics
@@ -36,7 +37,7 @@ defmodule DivoKafka do
         }
       },
       kafka: %{
-        image: "wurstmeister/kafka:latest",
+        image: "wurstmeister/kafka:#{kafka_image_version}",
         ports: ["9092:9092"],
         environment: [
           "KAFKA_AUTO_CREATE_TOPICS_ENABLE=#{auto_create_topics}",
