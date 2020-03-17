@@ -57,6 +57,10 @@ running in a CI system, particularly a containerized one. In such circumstances,
 recommended to use an address or name that is routable even if ExUnit will be running inside
 a container.
 
+* `auto_topic`: Whether or not topics will be created, if missing, when producing or consuming messages. Note that the topics supplied in `create_topics` will be created, on startup, regardless of this config setting. Defaults to `true`. 
+
+* `kafka_image_version`: The kafka image ([wurstmeister/kafka](https://hub.docker.com/r/wurstmeister/kafka)) version to use. A list of available versions can be found on their [dockerhub tags page](https://hub.docker.com/r/wurstmeister/kafka/tags). Defaults to `false`
+
 See [Divo GitHub](https://github.com/smartcitiesdata/divo) or [Divo Hex Documentation](https://hexdocs.pm/divo) for more instructions on using and configuring the Divo library.
 See [wurstmeister/kafka](https://github.com/wurstmeister/kafka-docker) and
 [wurstmeister/zookeeper](https://github.com/wurstmeister/zookeeper-docker) for further documentation
