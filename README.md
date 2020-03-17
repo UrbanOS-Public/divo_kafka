@@ -19,7 +19,7 @@ The package can be installed by adding `divo` and `divo_kafka` to your list of d
 def deps do
   [
     {:divo, "~> 1.1"},
-    {:divo_kafka, "~> 0.1.5"}
+    {:divo_kafka, "~> 0.1.6"}
   ]
 end
 ```
