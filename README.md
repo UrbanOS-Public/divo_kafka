@@ -18,7 +18,7 @@ The package can be installed by adding `divo` and `divo_kafka` to your list of d
 ```elixir
 def deps do
   [
-    {:divo, "~> 1.3"},
+    {:divo, "~> 2.0.0"},
     {:divo_kafka, "~> 1.0.0"}
   ]
 end

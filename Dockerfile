@@ -1,4 +1,4 @@
-FROM bitwalker/alpine-elixir:1.14.4
+FROM hexpm/elixir:1.14.4-erlang-25.3.2
 ARG HEX_TOKEN
 COPY . /app
 WORKDIR /app
